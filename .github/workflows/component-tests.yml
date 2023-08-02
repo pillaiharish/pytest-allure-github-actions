@@ -29,13 +29,19 @@ jobs:
           unzip allure-2.15.0.zip
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
 
+      - name: Print PATH environment variable
+        run: |
+          echo "PATH: $PATH"
+      
+      - name: Print current working directory
+        run: |
+          echo "$(pwd)"
+
       - name: Verify Allure installation
         run: |
           allure --version
 
-      - name: Print PATH environment variable
-        run: |
-          echo "PATH: $PATH"
+
 
       - name: Run tests
         continue-on-error: true
