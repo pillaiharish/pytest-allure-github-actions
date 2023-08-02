@@ -10,6 +10,8 @@ on:
 
 jobs:
   component-tests:
+    strategy:
+      fail-fast: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
