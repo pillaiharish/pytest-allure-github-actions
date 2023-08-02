@@ -39,16 +39,9 @@ jobs:
         run: |
           echo "$(pwd)"
 
-      - name: Check allure executable location
-        run: |
-          which allure
-
-
       - name: Verify Allure installation
         run: |
           allure --version
-
-
 
       - name: Run tests
         continue-on-error: true
