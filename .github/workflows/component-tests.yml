@@ -55,6 +55,6 @@ jobs:
       - name: Show allure report
         continue-on-error: true
         run: |
-          export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
-          allure --version
-          allure serve ./allure-results
+          ls
+          ls allure-results
+          zip -r allure-reports.zip allure-results
