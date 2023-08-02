@@ -25,30 +25,34 @@ jobs:
 
       - name: Install Allure command-line tool
         run: |
+          continue-on-error: true
           sudo apt install allure
           wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.zip
           unzip allure-2.15.0.zip
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           allure --version
-
-      - name: Print PATH environment variable
-        run: |
-          echo "PATH: $PATH"
-      
-      - name: Print current working directory
-        run: |
-          echo "$(pwd)"
-
-      - name: Verify Allure installation
-        run: |
-          allure --version
-
-      - name: Run tests
-        continue-on-error: true
-        run: |
           pytest -v --alluredir=./allure-results
-
-      - name: Show allure report
-        continue-on-error: true
-        run: |
           allure serve ./allure-results
+
+
+      # - name: Print PATH environment variable
+      #   run: |
+      #     echo "PATH: $PATH"
+      
+      # - name: Print current working directory
+      #   run: |
+      #     echo "$(pwd)"
+
+      # - name: Verify Allure installation
+      #   run: |
+      #     allure --version
+
+      # - name: Run tests
+      #   continue-on-error: true
+      #   run: |
+          
+
+      # - name: Show allure report
+      #   continue-on-error: true
+      #   run: |
+      #     allure serve ./allure-results
