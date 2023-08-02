@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
       - name: Install Allure command-line tool
         run: |
-          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.15.0.zip -O allure.zip
+          wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.zip
           unzip allure.zip
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
       - name: Run tests
