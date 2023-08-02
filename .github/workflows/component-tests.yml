@@ -24,7 +24,7 @@ jobs:
       - name: Install Allure command-line tool
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.zip
-          unzip allure.zip
+          unzip allure-2.15.0.zip
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
       - name: Run tests
         continue-on-error: true
