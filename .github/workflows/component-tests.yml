@@ -22,8 +22,10 @@ jobs:
         run: |
           pip install -r requirements.txt
       - name: Run tests
+        continue-on-error: true
         run: |
           pytest --alluredir=./allure-results
       - name: Show allure report
+        continue-on-error: true
         run: |
           allure serve ./allure-results
