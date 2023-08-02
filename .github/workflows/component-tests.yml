@@ -18,18 +18,30 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
       - name: Install Allure command-line tool
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.zip
           unzip allure-2.15.0.zip
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
+
+      - name: Verify Allure installation
+        run: |
+          allure --version
+
+      - name: Print PATH environment variable
+        run: |
+          echo "PATH: $PATH"
+
       - name: Run tests
         continue-on-error: true
         run: |
           pytest -v --alluredir=./allure-results
+
       - name: Show allure report
         continue-on-error: true
         run: |
