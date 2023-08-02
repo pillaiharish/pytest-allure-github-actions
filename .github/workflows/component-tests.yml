@@ -52,7 +52,9 @@ jobs:
       #   run: |
           
 
-      # - name: Show allure report
-      #   continue-on-error: true
-      #   run: |
-      #     allure serve ./allure-results
+      - name: Show allure report
+        continue-on-error: true
+        run: |
+          export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
+          allure --version
+          allure serve ./allure-results
