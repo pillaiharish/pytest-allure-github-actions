@@ -21,10 +21,15 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      - name: Install Allure command-line tool
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.15.0.zip -O allure.zip
+          unzip allure.zip
+          export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
       - name: Run tests
         continue-on-error: true
         run: |
-          pytest --alluredir=./allure-results
+          pytest -v --alluredir=./allure-results
       - name: Show allure report
         continue-on-error: true
         run: |
