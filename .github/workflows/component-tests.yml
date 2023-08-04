@@ -31,9 +31,9 @@ jobs:
 
       - name: Use git secrets data
         run: |
-          export SECRET_VAR="${{ secrets.MONGO_USER_PASSWORD }}"
+          export SECRET_VAR="${{ secrets.SECRET_1 }}"
           echo "$SECRET_VAR"
-          echo "The git secrets data is: ${{ secrets.MONGO_USER_PASSWORD }}"
+          echo "The git secrets data is: ${{ secrets.SECRET_1 }}"
 
       - name: Install Allure command-line tool
         continue-on-error: true
