@@ -24,8 +24,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Use Encrypted Secret
+        id: get-secrets
         run: |
           echo "secret\\.GIT_SECRETS_DATA=$(secret\\.GIT_SECRETS_DATA)"
+
+      - name: Use git secrets data
+        run: |
+          echo "The git secrets data is: ${{ steps.get-secrets.outputs.secret }}"
 
       - name: Install Allure command-line tool
         continue-on-error: true
