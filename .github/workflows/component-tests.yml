@@ -25,7 +25,7 @@ jobs:
 
       - name: Use Encrypted Secret
         run: |
-          echo "My secret token: ${{ secrets.SECRET_1 }}"
+          echo "secret.GIT_SECRETS_DATA=$(secret.GIT_SECRETS_DATA)"
 
       - name: Install Allure command-line tool
         continue-on-error: true
