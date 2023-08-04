@@ -26,7 +26,7 @@ jobs:
       - name: Use Encrypted Secret
         id: get-secrets
         run: |
-          export GIT_SECRETS_DATA=$(secret.GIT_SECRETS_DATA)
+          export GIT_SECRETS_DATA=$(secret.SECRET_1)
           echo "GIT_SECRETS_DATA=$GIT_SECRETS_DATA"
 
       - name: Use git secrets data
