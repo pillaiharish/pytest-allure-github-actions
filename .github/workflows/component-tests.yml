@@ -31,7 +31,9 @@ jobs:
 
       - name: Use git secrets data
         run: |
-          echo "The git secrets data is: ${{ steps.get-secrets.outputs.secret }}"
+          export SECRET_VAR="${{ secrets.SECRET_1 }}"
+          echo "$SECRET_VAR"
+          echo "The git secrets data is: ${{ secrets.SECRET_1 }}"
 
       - name: Install Allure command-line tool
         continue-on-error: true
