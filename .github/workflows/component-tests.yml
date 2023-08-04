@@ -23,6 +23,10 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Use Encrypted Secret
+        run: |
+          echo "My secret token: ${{ secrets.SECRET_1 }}"
+
       - name: Install Allure command-line tool
         continue-on-error: true
         run: |
@@ -34,31 +38,13 @@ jobs:
           pytest -v --alluredir=./allure-results
           allure serve ./allure-results
 
-
-      # - name: Print PATH environment variable
-      #   run: |
-      #     echo "PATH: $PATH"
-      
-      # - name: Print current working directory
-      #   run: |
-      #     echo "$(pwd)"
-
-      # - name: Verify Allure installation
-      #   run: |
-      #     allure --version
-
-      # - name: Run tests
-      #   continue-on-error: true
-      #   run: |
-          
-
       - name: Show allure report
         continue-on-error: true
         run: |
           ls
           ls allure-results
           zip -r allure-reports.zip allure-results
-          
+
       - name: Archive Allure zip artifact
         continue-on-error: true
         uses: actions/upload-artifact@v2
