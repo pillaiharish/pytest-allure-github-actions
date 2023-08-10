@@ -44,7 +44,12 @@ jobs:
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           allure --version
           pytest -v --alluredir=./allure-results
-          allure serve ./allure-results
+          
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-results 
 
       - name: Show allure report
         continue-on-error: true
