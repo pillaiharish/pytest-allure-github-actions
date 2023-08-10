@@ -44,6 +44,11 @@ jobs:
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           allure --version
           pytest -v --alluredir=./allure-results
+          
+          
+      - name: Install Allure command-line tool
+        continue-on-error: true
+        run: |
           allure generate allure-results -o allure-report
           
       - name: Publish to GitHub Pages
