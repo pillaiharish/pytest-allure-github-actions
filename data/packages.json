@@ -1,58 +1,15 @@
 {
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "children" : [ {
-    "name" : "work.untitled folder.pytest-allure-github-actions.test_cases",
-    "children" : [ {
-      "name" : "test_function_1",
-      "uid" : "b490a3e7c2b0ab4d",
-      "parentUid" : "ce99a10837e6f9456eb96dd89113045a",
-      "status" : "passed",
-      "time" : {
-        "start" : 1691005519417,
-        "stop" : 1691005519417,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "test_function_2",
-      "uid" : "831806df73385225",
-      "parentUid" : "ce99a10837e6f9456eb96dd89113045a",
-      "status" : "passed",
-      "time" : {
-        "start" : 1691005519419,
-        "stop" : 1691005519419,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "test_function_3",
-      "uid" : "d9123aa36ea0285",
-      "parentUid" : "ce99a10837e6f9456eb96dd89113045a",
-      "status" : "failed",
-      "time" : {
-        "start" : 1691005519421,
-        "stop" : 1691005519421,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "work.untitled folder.pytest-allure-github-actions.test_cases"
-  }, {
     "name" : "test_cases",
     "children" : [ {
       "name" : "test_function_1",
-      "uid" : "865e2a5c3ace57aa",
+      "uid" : "63cc1081dc12d537",
       "parentUid" : "2f5e813f34afdf02067fd6c5958321ba",
       "status" : "passed",
       "time" : {
-        "start" : 1691663757393,
-        "stop" : 1691663757393,
+        "start" : 1694337936086,
+        "stop" : 1694337936086,
         "duration" : 0
       },
       "flaky" : false,
@@ -60,12 +17,12 @@
       "parameters" : [ ]
     }, {
       "name" : "test_function_2",
-      "uid" : "545382ccf00821fe",
+      "uid" : "14a0c36d2997db86",
       "parentUid" : "2f5e813f34afdf02067fd6c5958321ba",
       "status" : "passed",
       "time" : {
-        "start" : 1691663757400,
-        "stop" : 1691663757400,
+        "start" : 1694337936088,
+        "stop" : 1694337936088,
         "duration" : 0
       },
       "flaky" : false,
@@ -73,12 +30,12 @@
       "parameters" : [ ]
     }, {
       "name" : "test_function_3",
-      "uid" : "39cb46e8e55888e6",
+      "uid" : "6d258908695a31bd",
       "parentUid" : "2f5e813f34afdf02067fd6c5958321ba",
       "status" : "failed",
       "time" : {
-        "start" : 1691663757402,
-        "stop" : 1691663757402,
+        "start" : 1694337936097,
+        "stop" : 1694337936097,
         "duration" : 0
       },
       "flaky" : false,

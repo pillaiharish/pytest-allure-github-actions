@@ -4,12 +4,12 @@
     "uid" : "65d0eef147c98286e9a7c7d5b6ade761",
     "name" : "Parent Suite 1",
     "statistic" : {
-      "failed" : 2,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 4,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 6
+      "total" : 3
     }
   } ]
 }
