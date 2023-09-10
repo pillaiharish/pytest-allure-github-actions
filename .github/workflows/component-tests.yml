@@ -100,6 +100,10 @@ jobs:
 
       - name: Generate Allure reports
         continue-on-error: true
+        env:
+          # SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HARISH_EMAIL: ${{ secrets.HARISH_EMAIL }}
+          HARISH_USERNAME: ${{ secrets.HARISH_USERNAME }}
         run: |
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           allure generate current-allure-results -o allure-report
@@ -107,6 +111,8 @@ jobs:
           rm -rf allure-report
           rm -rf current-allure-results
           git checkout gh-pages
+          git config --global user.email "$HARISH_EMAIL"
+          git config --global user.name "$HARISH_USERNAME"
           git add .
           git commit -m "Adding allure reports"
           git push origin gh-pages
