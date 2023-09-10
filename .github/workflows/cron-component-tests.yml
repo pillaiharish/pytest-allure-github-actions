@@ -1,0 +1,19 @@
+name: Run component tests and show reports
+
+on: 
+  # workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  create-docker-build:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/component-tests.yml
+    with:
+      tagname: test-component-docker-image
+      dockerfile: Dockerfile
+      allure_result_folder: allure-results
+    secrets: inherit
