@@ -92,6 +92,12 @@ jobs:
           ls current-allure-results
           rm current-allure-results/artifact.tar
 
+      - name: Install Allure for second job
+        run: |
+          sudo apt install allure
+          wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.zip
+          unzip allure-2.15.0.zip
+
       - name: Generate Allure reports
         continue-on-error: true
         run: |
