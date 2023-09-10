@@ -1,4 +1,4 @@
-name: Run component tests and show reports
+name: Cron run component tests and show reports
 
 on: 
   workflow_dispatch:
