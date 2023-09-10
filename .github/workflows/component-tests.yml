@@ -78,7 +78,7 @@ jobs:
       - name: Checkout Repository branch gh-pages
         uses: actions/checkout@v2
         with:
-          ref: gh-pagess
+          ref: gh-pages
 
       - name: Import artifacts from test run
         uses: actions/download-artifact@v2
