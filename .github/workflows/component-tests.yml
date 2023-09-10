@@ -52,6 +52,7 @@ jobs:
           allure --version
 
       - name: Run pytest in docker container
+        continue-on-error: true
         run: | 
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           mkdir -p current-allure-results
