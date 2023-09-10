@@ -101,10 +101,15 @@ jobs:
       - name: Generate Allure reports
         continue-on-error: true
         env:
-          # SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HARISH_EMAIL: ${{ secrets.HARISH_EMAIL }}
           HARISH_USERNAME: ${{ secrets.HARISH_USERNAME }}
         run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_ed25519
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           allure generate current-allure-results -o allure-report
           cp -r allure-report/* .
