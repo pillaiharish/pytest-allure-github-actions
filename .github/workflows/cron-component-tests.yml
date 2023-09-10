@@ -2,8 +2,8 @@ name: Cron run component tests and show reports
 
 on: 
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
+  # schedule:
+  #   - cron: '*/5 * * * *'
 
 jobs:
   create-docker-build:
