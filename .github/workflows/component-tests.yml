@@ -55,6 +55,7 @@ jobs:
         run: | 
           export PATH="$PATH:$(pwd)/allure-2.15.0/bin"
           mkdir -p current-allure-results
+          sudo chmod -R 777 $(pwd)/current-allure-results
           docker run -i -u 1000 -v $(pwd)/current-allure-results:/home/user_a/app/allure-results ${{ inputs.tagname }} pipenv run pytest test_cases.py --alluredir=/home/user_a/app/allure-results/ -v -p no:warnings 
 
       - name: list directory contents of current-allure-results
