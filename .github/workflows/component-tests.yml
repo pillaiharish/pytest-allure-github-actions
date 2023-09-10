@@ -115,9 +115,11 @@ jobs:
           cp -r allure-report/* .
           rm -rf allure-report
           rm -rf current-allure-results
-          git checkout gh-pages
           git config --global user.email "$HARISH_EMAIL"
           git config --global user.name "$HARISH_USERNAME"
+          git remote -v
+          git remote set-url origin git@github.com:pillaiharish/pytest-allure-github-actions.git 
+          git checkout gh-pages
           git add .
           git commit -m "Adding allure reports"
           git push origin gh-pages
